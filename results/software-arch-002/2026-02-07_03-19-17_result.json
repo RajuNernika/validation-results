@@ -1,0 +1,29 @@
+{
+  "success" : true,
+  "message" : "Validation completed successfully",
+  "assessmentId" : "software-arch-002",
+  "assessmentTitle" : "Software Architecture Assessment",
+  "summary" : {
+    "totalQuestions" : 1,
+    "passedQuestions" : 1,
+    "failedQuestions" : 0,
+    "totalMarksObtained" : 10,
+    "totalMarksPossible" : 10,
+    "percentageScore" : 100.0,
+    "overallResult" : "PASS"
+  },
+  "questionResults" : [ {
+    "questionId" : "Q1",
+    "description" : "Architecture Selection (Client-Server and Layered Architecture)",
+    "marksObtained" : 10,
+    "maxMarks" : 10,
+    "status" : "PASS",
+    "actualAnswer" : "Architecture Selection\na) Proposed Architecture\nThe AMS will follow a Client–Server architecture with a Layered design on the server side.\nClients:\nWeb browser (Customer UI)\nInternal Admin Portal\nServer:\nApplication Server\nDatabase Server\nb) Layers and Responsibilities\nPresentation Layer\nHandles UI logic\nAccepts user inputs\nDisplays booking details, confirmations, errors\nBusiness Layer\nContains core business rules\nFlight booking logic\nSeat availability checks\nPricing and validation\nData Access Layer\nCommunicates with database\nPerforms CRUD operations\nAbstracts persistence logic\nDatabase\nStores flights, bookings, users, payments\nc) Why Layered Architecture is Suitable\nClear separation of concerns\nEasier maintenance and testing\nBusiness logic remains independent of UI changes\nSupports future scalability and enhancements",
+    "expectedAnswer" : "PART A - Proposed Architecture: Client-Server with Layered design on server side. Clients: Web browser (Customer UI), Internal Admin Portal. Server: Application Server, Database Server. PART B - Layers: Presentation Layer handles UI, Business Layer contains core business rules, Data Access Layer communicates with database. PART C - Why Suitable: Clear separation of concerns, easier maintenance and testing, business logic independent of UI.",
+    "feedback" : "The response effectively addresses the question by proposing a client-server architecture with a layered design. It accurately identifies the layers and their responsibilities, and explains the suitability of the layered architecture. The answer is clear, technically accurate, and demonstrates a good understanding of the concepts.",
+    "diagramEvaluation" : null
+  } ],
+  "githubResult" : null,
+  "validatedAt" : "2026-02-07T03:19:16.4535952",
+  "processingTimeMs" : 13333
+}
