@@ -1,0 +1,59 @@
+{
+  "success" : true,
+  "message" : "Validation completed successfully",
+  "assessmentId" : "software-arch-002",
+  "assessmentTitle" : "Software Architecture Assessment",
+  "summary" : {
+    "totalQuestions" : 4,
+    "passedQuestions" : 4,
+    "failedQuestions" : 0,
+    "totalMarksObtained" : 36,
+    "totalMarksPossible" : 36,
+    "percentageScore" : 100.0,
+    "overallResult" : "PASS"
+  },
+  "questionResults" : [ {
+    "questionId" : "Q1",
+    "description" : "Architecture Selection (Client-Server and Layered Architecture)",
+    "marksObtained" : 10,
+    "maxMarks" : 10,
+    "status" : "PASS",
+    "actualAnswer" : "Architecture Selection\na) Proposed Architecture\nThe AMS will follow a Client–Server architecture with a Layered design on the server side.\nClients:\nWeb browser (Customer UI)\nInternal Admin Portal\nServer:\nApplication Server\nDatabase Server\nb) Layers and Responsibilities\nPresentation Layer\nHandles UI logic\nAccepts user inputs\nDisplays booking details, confirmations, errors\nBusiness Layer\nContains core business rules\nFlight booking logic\nSeat availability checks\nPricing and validation\nData Access Layer\nCommunicates with database\nPerforms CRUD operations\nAbstracts persistence logic\nDatabase\nStores flights, bookings, users, payments\nc) Why Layered Architecture is Suitable\nClear separation of concerns\nEasier maintenance and testing\nBusiness logic remains independent of UI changes\nSupports future scalability and enhancements",
+    "expectedAnswer" : "PART A - Proposed Architecture: Client-Server with Layered design on server side. Clients: Web browser (Customer UI), Internal Admin Portal. Server: Application Server, Database Server. PART B - Layers: Presentation Layer handles UI, Business Layer contains core business rules, Data Access Layer communicates with database. PART C - Why Suitable: Clear separation of concerns, easier maintenance and testing, business logic independent of UI.",
+    "feedback" : "The response effectively addresses the question by proposing a client-server architecture with a layered design. It accurately identifies and explains the responsibilities of each layer, and justifies the suitability of the layered architecture. The answer is clear, technically accurate, and demonstrates a good understanding of the concepts.",
+    "diagramEvaluation" : null
+  }, {
+    "questionId" : "Q2",
+    "description" : "Diagram Interpretation (Error Spotting and Correction)",
+    "marksObtained" : 10,
+    "maxMarks" : 10,
+    "status" : "PASS",
+    "actualAnswer" : "Diagram Interpretation\na) Identified Issues\nIncorrect Layer Dependency\nThe UI layer directly communicates with the Database layer, violating layered architecture principles.\nThis creates tight coupling and bypasses business rules.\nIncorrect Layer Ordering\nThe Business Logic layer is placed below the Database layer.\nBusiness logic should sit above data access and control all interactions with persistence.\nb) Corrected Architecture\n[ Presentation Layer ]\n       |\n[ Business Layer ]\n       |\n[ Data Access Layer ]\n       |\n[ Database ]\nc) Improvement Explanation\nClear Dependency Direction\nEach layer depends only on the layer directly below it.\nHigher layers are unaware of lower-level implementation details.\nSeparation of Concerns\nUI handles presentation logic only.\nBusiness layer centralizes rules and validations.\nData access layer isolates persistence logic.\nImproved Maintainability and Testability\nChanges in the database affect only the data access layer.\nBusiness logic can be tested independently of UI and database.\nUI changes do not ripple through the system.",
+    "expectedAnswer" : "Issues: 1) Incorrect Layer Ordering - Business logic below Database. 2) Direct UI to Database connection. Corrected: [Presentation] -> [Business] -> [Data Access] -> [Database]. Improvements: Clear dependency direction, separation of concerns, easier testing.",
+    "feedback" : "The response effectively identifies the architectural issues and provides a corrected diagram with proper layer ordering. The explanation of improvements in maintainability is clear and technically accurate, covering all key concepts.",
+    "diagramEvaluation" : null
+  }, {
+    "questionId" : "Q3",
+    "description" : "Identifying Bounded Contexts (DDD)",
+    "marksObtained" : 8,
+    "maxMarks" : 8,
+    "status" : "PASS",
+    "actualAnswer" : "Bounded Context Identification\nBooking\nResponsibility:\nTicket booking and seat allocation\nExample Entities:\nBooking\nTicket\nFlight Management\nResponsibility:\nManaging flight schedules and routes\nExample Entities:\nFlight\nAircraft\nPayment\nResponsibility:\nPayment processing\nHandling refunds\nExample Entities:\nPayment\nTransaction\nUser Management\nResponsibility:\nManaging users and roles\nExample Entities:\nUser\nRole",
+    "expectedAnswer" : "Bounded Contexts: 1) Booking Context - Ticket booking. Entities: Booking, Ticket. 2) Flight Management - Flight schedules. Entities: Flight, Aircraft. 3) Payment Context - Payment processing. Entities: Payment, Transaction. 4) User Management - Users and roles. Entities: User, Role.",
+    "feedback" : "The response effectively identifies the bounded contexts and their responsibilities, aligning well with the expected answer. All key concepts are covered, and the examples provided are appropriate and relevant. The explanation is clear and demonstrates a good understanding of the topic.",
+    "diagramEvaluation" : null
+  }, {
+    "questionId" : "Q4",
+    "description" : "Tactical DDD Design (Booking Context)",
+    "marksObtained" : 8,
+    "maxMarks" : 8,
+    "status" : "PASS",
+    "actualAnswer" : "Tactical DDD – Booking Context\na) Components\nAggregate Root: Booking\nEntities: Passenger, Ticket\nValue Objects: SeatNumber, Money, FlightDate\nb) Importance of Aggregate Boundary\nEnsures consistency during booking\nPrevents partial updates\nAll changes go through Booking root\nMaintains transactional integrity",
+    "expectedAnswer" : "Aggregate Root: Booking. Entities: Passenger, Ticket. Value Objects: SeatNumber, Money, FlightDate. Importance: Ensures consistency during booking operations, prevents partial updates.",
+    "feedback" : "The response effectively identifies the aggregate root, entities, and value objects, and explains the importance of the aggregate boundary. It aligns well with the expected answer and demonstrates a clear understanding of the concepts.",
+    "diagramEvaluation" : null
+  } ],
+  "githubResult" : null,
+  "validatedAt" : "2026-02-07T11:43:21.865788",
+  "processingTimeMs" : 23012
+}
